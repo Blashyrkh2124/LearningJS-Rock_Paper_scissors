@@ -1,5 +1,10 @@
 var UserChoice = "rock";
-var CompChoice = "SCISSORS";
+
+function computerChoice() {
+  var Options = ["rock", "paper", "scissors"];
+  const Throw = Options[Math.floor(Math.random() * 3)];
+  return Throw;
+}
 
 function rockPaperScissors(player, computer) {
   var play = UserChoice.toLowerCase();
@@ -16,5 +21,5 @@ function rockPaperScissors(player, computer) {
 
 function playerWin() {
   alert("Player wins. Player choice was " + UserChoice + ". Computer choice was " + CompChoice + ".");
-}
-rockPaperScissors(UserChoice, CompChoice);
+};
+console.log(computerChoice());

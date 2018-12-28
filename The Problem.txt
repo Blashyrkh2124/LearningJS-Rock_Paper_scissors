@@ -1,0 +1,10 @@
+Create a simple JavaScript program that can play 'rock paper scissors'. It should take a user input and generate a random computer input.
+
+Find a simple solution to define which wins, instead of having to define every possible scenario.
+
+Logic =
+Rock beats scissors.
+Scissors beats paper.
+Paper beats rock.
+
+First: create a variable that generates a computer choice.
