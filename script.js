@@ -18,31 +18,31 @@ function game() {
     switch (user) {
       case "rock":
         if (compChoice == "scissors") {
-          console.log("You win!");
+          console.log("You win! " + user + " beats " + compChoice);
           ++playerWins;
         }
-        else {
-          console.log("You lose.");
+        else if (compChoice == "paper") {
+          console.log("You lose. " + compChoice + " beats " + user);
           ++computerWins;
         }
         break;
       case "scissors":
         if (compChoice == "paper") {
-          console.log("You win!");
+          console.log("You win! " + user + " beats " + compChoice);
           ++playerWins;
         }
-        else {
-          console.log("You lose.");
+        else if (compChoice == "rock") {
+          console.log("You lose. " + compChoice + " beats " + user);
           ++computerWins;
         }
         break;
       case "paper":
-        if (compChoice == "rock") {
-          console.log("You win!");
+      if (compChoice == "rock") {
+        console.log("You win! " + user + " beats " + compChoice);
           ++playerWins;
       }
-        else {
-          console.log("You lose.");
+      else if (compChoice == "scissors") {
+        console.log("You lose. " + compChoice + " beats " + user);
           ++computerWins;
         }
         return;
