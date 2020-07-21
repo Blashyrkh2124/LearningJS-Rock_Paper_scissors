@@ -3,66 +3,54 @@ let playerWins = 0;
 let computerWins = 0;
 
 // the actual game
-function game() {
-  var userChoice = prompt();
+
+const buttonClicked = document.querySelectorAll('.button');
+buttonClicked.forEach((buttonClicked => buttonClicked.addEventListener("mousedown", function game() {
+var selectedButton = this.id;
+  var userChoice = selectedButton;
   var user = userChoice.toLowerCase();
+  var text1 = document.querySelector("p")
   var compChoice = (function() {
     var options = ["rock", "paper", "scissors"];
     var throwResult = options[Math.floor(Math.random() * 3)];
     return throwResult;
   })();
   if (user === compChoice) {
-    console.log("Draw...");
+    text1.textContent = "Draw";
   }
   else {
     switch (user) {
       case "rock":
         if (compChoice == "scissors") {
-          console.log("You win! " + user + " beats " + compChoice);
+          text1.textContent = "You win! " + user + " beats " + compChoice;
           ++playerWins;
         }
         else if (compChoice == "paper") {
-          console.log("You lose. " + compChoice + " beats " + user);
+          text1.textContent = "You lose. " + compChoice + " beats " + user;
           ++computerWins;
         }
         break;
       case "scissors":
         if (compChoice == "paper") {
-          console.log("You win! " + user + " beats " + compChoice);
+          var text1 = document.querySelector("p")
+          text1.textContent = "You win! " + user + " beats " + compChoice;
           ++playerWins;
         }
         else if (compChoice == "rock") {
-          console.log("You lose. " + compChoice + " beats " + user);
+          text1.textContent = "You lose. " + compChoice + " beats " + user;
           ++computerWins;
         }
         break;
       case "paper":
       if (compChoice == "rock") {
-        console.log("You win! " + user + " beats " + compChoice);
+        text1.textContent = "You win! " + user + " beats " + compChoice;
           ++playerWins;
       }
       else if (compChoice == "scissors") {
-        console.log("You lose. " + compChoice + " beats " + user);
+        text1.textContent = "You lose. " + compChoice + " beats " + user;
           ++computerWins;
         }
         return;
-      default: (console.log("It appears you made an error."));
     }
   }
-}
-
-// loops the game 5 times
-for(i=1; i<=5; i++) {
-  game()
-  console.log("Player wins =" + playerWins);
-  console.log("Computer wins= " + computerWins);
-  // after 5 games this reutrns the winner.
-  if (i == 5) {
-    if (playerWins > computerWins) {
-      console.log("The game has ended. You have won.");
-    } else if (playerWins < computerWins) {
-      console.log("The game has ended. You have lost.");
-    } else (console.log("The game has ended and resulted in a draw."));
-    break;
-  }
-}
+})));
