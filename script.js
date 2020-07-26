@@ -1,15 +1,15 @@
 // variables to keep track of score
 let playerWins = 0;
 let computerWins = 0;
+var gamesCounter = 1;
 
 // the actual game
 
 const buttonClicked = document.querySelectorAll('.button');
 buttonClicked.forEach((buttonClicked => buttonClicked.addEventListener("mousedown", function game() {
-var selectedButton = this.id;
-  var userChoice = selectedButton;
-  var user = userChoice.toLowerCase();
-  var text1 = document.querySelector("p")
+  var user = this.id;
+
+  var text1 = document.querySelector(".result")
   var compChoice = (function() {
     var options = ["rock", "paper", "scissors"];
     var throwResult = options[Math.floor(Math.random() * 3)];
@@ -52,5 +52,13 @@ var selectedButton = this.id;
         }
         return;
     }
+    let playerCounter = document.querySelector(".user_wins")
+    playerCounter.textContent = playerWins;
+    let computerCounter = document.querySelector(".comp_wins");
+    computerCounter.textContent = computerWins;
+    var counter = document.querySelector(".numberOfGames");
+    gamesCounter = gamesCounter++;
+    counter.textContent = gamesCounter;
+
   }
 })));
